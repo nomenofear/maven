@@ -2,7 +2,7 @@
 
 ## 1、项目结构
 
-![1](./images\1.png)
+![1](./images/1.png)
 
 myproj-inherit/pom.xml为父pom，myproj-inherit-part1/pom.xml为子pom
 
