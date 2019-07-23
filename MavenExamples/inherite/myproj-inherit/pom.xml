@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.oops.myproj</groupId>
+	<artifactId>myproj-inherit</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>myproj-inherit</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>
+		<!-- 这里配置的不是artifactId，而是这个模块的目录名称 -->
+		<module>../myproj-inherit-part1</module>
+	</modules>
+
+	<!-- 该节点下的依赖会被子项目自动全部继承 -->
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.7</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<!-- dependencyManagement中已经指定了版本所以这里以及子项目中都无需再声明版本号 -->
+		<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<!-- 该节点下的依赖关系只是为了统一版本号，不会被子项目自动继承， -->
+		<!--除非子项目主动引用，好处是子项目可以不用写版本号 -->
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>4.2.5.RELEASE</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<build>
+		<pluginManagement>
+			<!-- 该节点作用与dependencyManagement类似 -->
+		</pluginManagement>
+	</build>
+     
+</project>
