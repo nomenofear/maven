@@ -18,7 +18,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.13.1</version>
       <!-- scope:compile、test、provided、runtime、system、import -->
       <!-- compile对编译、测试、运行classpath均有效 -->
       <!-- test只对test classpath有效 -->
