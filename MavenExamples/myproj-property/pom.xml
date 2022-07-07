@@ -14,7 +14,7 @@
 	<!-- s所有的java系统属性都可以用maven属性引用 -->
 	<!-- 所有的环境变量都可以用env.开头的属性引用 -->
 	<properties>
-		<springVersion>5.1.5.RELEASE</springVersion>
+		<springVersion>5.2.21.RELEASE</springVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
